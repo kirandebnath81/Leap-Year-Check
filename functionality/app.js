@@ -9,7 +9,10 @@ function eventHandler(){
     let name=nameInput.value 
     let date=dateInput.value
 
-    if((date%4===0)&&(date%100!=0)||(date%400===0)){
+    if(isNaN(date)){
+        outputText.innerText="Enter valid input"
+    }
+    else if((date%4===0)&&(date%100!=0)||(date%400===0)){
         outputText.innerText=name+" you were born in a leap year !!"
     }else{
         outputText.innerText=name+" you were not born in a leap year!!!"
